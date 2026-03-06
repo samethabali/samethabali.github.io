@@ -2,47 +2,55 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>CSS Temel Ödevi</title>
+    <title>Web Tasarım Ödevi - Modern Temel</title>
     <style>
-        /* Grup Seçici Örneği (İster: en az 1 adet) */
+        /* Grup Seçici Örneği */
         h1, h2, p, a {
-            font-family: Arial, sans-serif;
-        }
-
-        /* Temel margin, padding, border ayarlamaları */
-        body {
-            background-color: #93979f;
-            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
         }
 
-        .container {
-            width: 900px; /* Genişlik (width) */
-            margin: 0 auto;
-            background-color: #96a7b9;
-            border: 1px solid #9ca3ac; /* Kenarlık (border) */
-            border-radius: 6px;
+        /* Temel margin, padding ayarlamaları */
+        body {
+            background-color: #e9ecef; /* Açık gri arka plan */
+            padding: 30px;
+            margin: 0;
         }
 
-        /* Üst Başlık ve Menü Alanı */
+        /* Ana Taşıyıcı Kutu */
+        .container {
+            width: 960px; /* Genişlik (width) */
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 2px solid #dee2e6; /* Kenarlık (border) */
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        /* Üst Başlık (Header) Alanı */
         header {
-            padding: 20px;
-            border-bottom: 1px solid #9aa0a8;
+            background-color: #2b3035; /* Koyu gri/siyah arka plan */
+            color: #ffffff;
+            padding: 25px;
+            border-bottom: 4px solid #0dcaf0; /* Turkuaz alt çizgi */
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
         }
 
         header h1 {
             display: inline-block;
-            margin: 0;
-            font-size: 24px;
-            color: #33587d;
-            width: 35%;
+            font-size: 26px;
+            color: #ffffff;
+            width: 40%;
+            vertical-align: middle;
         }
 
         /* Hiyerarşik Seçici Örneği 1 */
         header nav {
             display: inline-block;
-            width: 63%;
+            width: 58%;
             text-align: right;
+            vertical-align: middle;
         }
 
         header nav ul {
@@ -51,88 +59,93 @@
             padding: 0;
         }
 
-        /* Menüyü yatay yapma işlemi */
+        /* Menüyü yatay yapma işlemi (inline-block) */
         header nav ul li {
-            display: inline-block; /* display: inline-block kullanımı */
-            margin-left: 15px;
+            display: inline-block;
+            margin-left: 10px;
         }
 
         header nav ul li a {
             text-decoration: none;
-            color: #5d4545;
-            padding: 8px 12px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
+            color: #e9ecef;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
         }
 
         /* Hover efekti (Renk değişimi) */
-        header nav ul li a:hover, header nav ul li a.active {
-            background-color: #6b83a9;
-            color: white;
+        header nav ul li a:hover {
+            background-color: #0dcaf0;
+            color: #2b3035;
         }
 
         .header-desc {
-            margin-top: 20px;
-            color: #4b3c3c;
-            line-height: 1.6;
+            margin-top: 15px;
+            color: #adb5bd;
+            font-size: 15px;
+            line-height: 1.5;
         }
 
-        /* Ana İçerik ve İki Sütunlu Yapı */
+        /* Ana İçerik Alanı */
         main {
-            padding: 20px;
+            padding: 25px;
         }
 
+        /* Kutu Ortak Özellikleri */
         .content-box, .sidebar-box {
-            display: inline-block; /* Kutuları yan yana getirme */
+            display: inline-block; /* Yan yana getirme */
             vertical-align: top;
-            padding: 20px; /* İç boşluk (padding) */
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 6px;
+            height: 300px; /* Yükseklik (height) kuralı uygulandı */
         }
 
+        /* Sol Kutu */
         .content-box {
-            width: 50%;
-            background-color: #fdf5e6; /* Sarımsı arka plan */
-            border-color: #c3a761;
-            margin-right: 2%; /* Dış boşluk (margin) */
+            width: 60%;
+            background-color: #f8f9fa; 
+            border: 1px solid #ced4da;
+            margin-right: 3%;
         }
 
+        /* Sağ Kutu */
         .sidebar-box {
-            width: 40%;
-            background-color: #e6f0f5; /* Mavimsi arka plan */
-            border-color: #5a8fab;
+            width: 36%;
+            background-color: #e0fbfc; /* Açık mavi/turkuaz arka plan */
+            border: 1px solid #90e0ef;
         }
 
         .content-box h2, .sidebar-box h2 {
-            margin-top: 0;
-            font-size: 18px;
-            color: #4d3a3a;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
+            font-size: 20px;
+            color: #212529;
+            border-bottom: 2px solid rgba(0,0,0,0.05);
             padding-bottom: 10px;
             margin-bottom: 15px;
         }
 
-        /* Hiyerarşik Seçici Örneği 2 ve Metin Düzenlemeleri */
+        /* Hiyerarşik Seçici Örneği 2 ve 4 Farklı Metin Düzenlemesi */
         main .content-box p, main .sidebar-box p {
-            font-size: 15px; /* Yazı boyutu (font-size) */
-            color: #574141; /* Metin rengi (color) */
-            line-height: 1.7; /* Satır aralığı (line-height) */
-            text-align: justify; /* Hizalama (text-align) */
-            margin-bottom: 15px;
+            font-size: 15px; /* Özellik 1 */
+            color: #495057; /* Özellik 2 */
+            line-height: 1.8; /* Özellik 3 */
+            text-align: justify; /* Özellik 4 */
+            margin-bottom: 12px;
         }
 
-        main .content-box p:last-child, main .sidebar-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* En Alt Kısım */
+        /* Footer Alanı */
         footer {
             text-align: center;
-            padding: 15px;
-            background-color: #f2f3f5;
-            border-top: 1px solid #d1d5db;
+            padding: 20px;
+            background-color: #2b3035;
+            color: #adb5bd;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+
+        footer p {
             font-size: 14px;
-            color: #725252;
         }
     </style>
 </head>
@@ -140,35 +153,34 @@
 
     <div class="container">
         <header>
-            <h1>CSS Temel Ödevi</h1>
+            <h1>Sistem Mimarileri</h1>
             <nav>
                 <ul>
-                    <li><a href="#" class="active">Ana Sayfa</a></li>
-                    <li><a href="#">Hakkında</a></li>
-                    <li><a href="#">Hizmetler</a></li>
+                    <li><a href="#">Ana Sayfa</a></li>
+                    <li><a href="#">Projeler</a></li>
+                    <li><a href="#">Makaleler</a></li>
                     <li><a href="#">İletişim</a></li>
                 </ul>
             </nav>
-            <p class="header-desc">Verilen benzer bir düzenle basit bir web sayfası oluşturun. CSS'in temel özelliklerini (display, width, height, margin, padding, border, selector) uygulayın. Sadece HTML5 + CSS3 kullanın, hazır framework kullanmak yasak (Bootstrap, Tailwind vb.).</p>
+            <p class="header-desc">Bu sayfa, HTML5 ve CSS3 temel özellikleri kullanılarak, framework bağımsız bir şekilde modern web standartlarına uygun olarak tasarlanmıştır.</p>
         </header>
 
         <main>
             <div class="content-box">
-                <h2>İçerik</h2>
-                <p>Bu alanda örnek içerik metinleri bulunmaktadır. Css özellikleriyle bu metinler arasında <strong>boşluklar</strong> (line-height) ve hizalamalar (text-align) düzenlenebilir.</p>
-                <p>Önce CSS ile kutuları / alanları yan yana getirmeyi, ardından alt alta yerleştirmeyi öğrendik. Şimdi ise CSS seçicilerini kullanarak grup ve hiyerarşik seçimler yapmayı göreceğiz.</p>
+                <h2>Ölçeklenebilir Backend Sistemleri</h2>
+                <p>Bir uygulamanın belkemiği olan arka plan servisleri, veri bütünlüğünü ve güvenliğini sağlamakla yükümlüdür. Doğru kurgulanmış bir veritabanı tasarımı ve akıllı önbellekleme (caching) mekanizmaları, sistemin tepki süresini doğrudan iyileştirir.</p>
+                <p>Özellikle mikroservis mimarilerinde, servisler arası iletişimin yönetilmesi ve yüksek trafikli anlarda yük dengeleme (load balancing) stratejilerinin kullanılması, projenin sürekliliği açısından hayati önem taşır.</p>
             </div>
 
             <div class="sidebar-box">
-                <h2>Yan Menü / Bilgi</h2>
-                <p>Bu alan yan menü veya bilgi kısmıdır. CSS ile genişlik (width), yükseklik (height), kenar boşlukları (margin/padding) ve kenarlık (border) özelliklerini kullanarak düzenleyebiliriz.</p>
-                <p>Öğrendiklerimizi hiyerarşik ve grup seçicilerle uygulayıp farklı bölümlere stil verebiliriz.</p>
+                <h2>Teknoloji Yığını (Stack)</h2>
+                <p>Geliştirme süreçlerinde asenkron yapıları destekleyen, performansı yüksek diller ve ortamlar tercih edilmektedir. İlişkisel veritabanları ile NoSQL çözümleri projenin ihtiyacına göre harmanlanabilir.</p>
+                <p>Sistemin sağlığını izlemek için loglama ve metrik toplama araçlarının entegre edilmesi, günümüz mühendislik standartlarının vazgeçilmez bir parçasıdır.</p>
             </div>
         </main>
 
         <footer>
-            <p>© 2026 CSS Temel Örnek. Bu sayfa basit bir HTML+CSS alıştırmasıdır.</p>
-            <p><a href="index.html" style="color: #666; text-decoration: none;">&larr; Ana Sayfaya Dön (Samet Can Habalı)</a></p>
+            <p>© 2026 Tasarım ve Geliştirme Ödevi. Tüm temel CSS kuralları (display, width, height, margin vb.) uygulanmıştır.</p>
         </footer>
     </div>
 
