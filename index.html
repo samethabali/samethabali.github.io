@@ -2,43 +2,61 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ana Sayfa | Samet Can Habalı</title>
+    <title>Samet Can Habalı | Ana Sayfa</title>
+    <style>
+        h1, h2, p, a, li, dt, dd { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; }
+        body { background-color: #e9ecef; padding: 30px; margin: 0; }
+        .container { width: 960px; margin: 0 auto; background-color: #ffffff; border: 2px solid #dee2e6; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        
+        header { background-color: #2b3035; color: #ffffff; padding: 25px; border-bottom: 4px solid #0dcaf0; border-top-left-radius: 6px; border-top-right-radius: 6px; }
+        header h1 { display: inline-block; font-size: 26px; color: #ffffff; width: 40%; vertical-align: middle; }
+        header nav { display: inline-block; width: 58%; text-align: right; vertical-align: middle; }
+        header nav ul { list-style: none; margin: 0; padding: 0; }
+        header nav ul li { display: inline-block; margin-left: 10px; }
+        header nav ul li a { text-decoration: none; color: #e9ecef; padding: 10px 15px; border-radius: 5px; transition: all 0.3s ease; font-weight: bold; }
+        header nav ul li a:hover, header nav ul li a.active { background-color: #0dcaf0; color: #2b3035; }
+        .header-desc { margin-top: 15px; color: #adb5bd; font-size: 15px; line-height: 1.5; }
+        
+        main { padding: 25px; }
+        .content-box, .sidebar-box { display: inline-block; vertical-align: top; padding: 20px; box-sizing: border-box; border-radius: 6px; min-height: 320px; }
+        .content-box { width: 60%; background-color: #f8f9fa; border: 1px solid #ced4da; margin-right: 3%; }
+        .sidebar-box { width: 36%; background-color: #e0fbfc; border: 1px solid #90e0ef; }
+        .content-box h2, .sidebar-box h2 { font-size: 20px; color: #212529; border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px; margin-bottom: 15px; }
+        main p { font-size: 15px; color: #495057; line-height: 1.8; text-align: justify; margin-bottom: 12px; }
+        
+        footer { text-align: center; padding: 20px; background-color: #2b3035; color: #adb5bd; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; }
+        footer p { font-size: 14px; }
+    </style>
 </head>
 <body>
-
-    <header>
-        <h1>Samet Can Habalı</h1>
-        <p>Ölçeklenebilir sistemler ve veriye dayalı karar mekanizmaları.</p>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="about.html">Hakkımda</a></li>
-            <li><a href="interests.html">İlgi Alanlarım</a></li>
-            <li><a href="css-odevi.html">CSS Ödevi / Projelerim</a></li>
-            <li><a href="contact.html">İletişim</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <h2>Hoş Geldiniz</h2>
-        <p>Kişisel web siteme hoş geldiniz. Burada geliştirdiğim projeleri, yazılım dünyasındaki yolculuğumu ve üzerinde çalıştığım teknolojileri paylaşıyorum.</p>
-
-        <h2>Hızlı Bağlantılar</h2>
-        <ul>
-            <li><a href="about.html">Ben Kimim?</a></li>
-            <li><a href="#hedef">Günün Motivasyonu (Sayfa İçi Hedef)</a></li>
-        </ul>
-
-        <h2 id="hedef">Günün Motivasyonu</h2>
-        <p>Mühendislik problemlerini yalnızca uygulama seviyesinde değil, sistem tasarımı ve performans optimizasyonu perspektifiyle ele almak gerekir.</p>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Samet Can Habalı</p>
-    </footer>
-
+    <div class="container">
+        <header>
+            <h1>Samet Can Habalı</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Ana Sayfa</a></li>
+                    <li><a href="about.html">Hakkımda</a></li>
+                    <li><a href="interests.html">İlgi Alanlarım</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                </ul>
+            </nav>
+            <p class="header-desc">Ölçeklenebilir sistemler ve veriye dayalı karar mekanizmaları.</p>
+        </header>
+        <main>
+            <div class="content-box">
+                <h2>Hoş Geldiniz</h2>
+                <p>Kişisel web siteme hoş geldiniz. Burada geliştirdiğim projeleri, yazılım dünyasındaki yolculuğumu ve üzerinde çalıştığım teknolojileri paylaşıyorum.</p>
+                <p>Mühendislik problemlerini yalnızca uygulama seviyesinde değil, sistem tasarımı ve performans optimizasyonu perspektifiyle ele almak gerekir. Hem backend mimarileri hem de derin öğrenme modelleri üzerine çalışarak uçtan uca çözümler üretiyorum.</p>
+            </div>
+            <div class="sidebar-box">
+                <h2>Odak Alanlarım</h2>
+                <p><strong>Backend & Sistem:</strong> Node.js, Redis, WebSockets ve PostgreSQL kullanarak yüksek trafikli ve ölçeklenebilir ağ mimarileri tasarlamak.</p>
+                <p><strong>Yapay Zeka:</strong> Bilgisayarlı görü (Computer Vision) projeleri ve finansal zaman serileri için algoritmik karar destek sistemleri.</p>
+            </div>
+        </main>
+        <footer>
+            <p>© 2026 Samet Can Habalı. Tüm hakları saklıdır.</p>
+        </footer>
+    </div>
 </body>
 </html>

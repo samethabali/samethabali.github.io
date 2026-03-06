@@ -2,43 +2,65 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İletişim | Samet Can Habalı</title>
+    <title>Samet Can Habalı | İletişim</title>
+    <style>
+        h1, h2, p, a, li { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; }
+        body { background-color: #e9ecef; padding: 30px; margin: 0; }
+        .container { width: 960px; margin: 0 auto; background-color: #ffffff; border: 2px solid #dee2e6; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        header { background-color: #2b3035; color: #ffffff; padding: 25px; border-bottom: 4px solid #0dcaf0; border-top-left-radius: 6px; border-top-right-radius: 6px; }
+        header h1 { display: inline-block; font-size: 26px; color: #ffffff; width: 40%; vertical-align: middle; }
+        header nav { display: inline-block; width: 58%; text-align: right; vertical-align: middle; }
+        header nav ul { list-style: none; margin: 0; padding: 0; }
+        header nav ul li { display: inline-block; margin-left: 10px; }
+        header nav ul li a { text-decoration: none; color: #e9ecef; padding: 10px 15px; border-radius: 5px; transition: all 0.3s ease; font-weight: bold; }
+        header nav ul li a:hover, header nav ul li a.active { background-color: #0dcaf0; color: #2b3035; }
+        .header-desc { margin-top: 15px; color: #adb5bd; font-size: 15px; line-height: 1.5; }
+        main { padding: 25px; }
+        .content-box, .sidebar-box { display: inline-block; vertical-align: top; padding: 20px; box-sizing: border-box; border-radius: 6px; min-height: 320px; }
+        .content-box { width: 60%; background-color: #f8f9fa; border: 1px solid #ced4da; margin-right: 3%; }
+        .sidebar-box { width: 36%; background-color: #e0fbfc; border: 1px solid #90e0ef; }
+        .content-box h2, .sidebar-box h2 { font-size: 20px; color: #212529; border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px; margin-bottom: 15px; }
+        main p { font-size: 15px; color: #495057; line-height: 1.8; text-align: justify; margin-bottom: 12px; }
+        ul.contact-list { padding-left: 20px; color: #495057; line-height: 2.2; font-size: 15px; }
+        ul.contact-list a { color: #0275d8; text-decoration: none; }
+        ul.contact-list a:hover { text-decoration: underline; }
+        footer { text-align: center; padding: 20px; background-color: #2b3035; color: #adb5bd; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; }
+        footer p { font-size: 14px; }
+    </style>
 </head>
 <body>
-
-    <header>
-        <h1>İletişim</h1>
-        <p>Bana Ulaşın</p>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="about.html">Hakkımda</a></li>
-            <li><a href="interests.html">İlgi Alanlarım</a></li>
-            <li><a href="css-odevi.html">CSS Ödevi / Projelerim</a></li>
-            <li><a href="contact.html">İletişim</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <h2>Bağlantılarım</h2>
-        <p>Projelerim, freelance işbirlikleri veya teknik konularda fikir alışverişi yapmak için bana aşağıdaki kanallardan ulaşabilirsiniz.</p>
-
-        <ul>
-            <li><strong>E-posta:</strong> <a href="mailto:samets.250223@gmail.com">samets.250223@gmail.com</a></li>
-            
-            <li><strong>GitHub:</strong> <a href="https://github.com/samethabali" target="_blank" rel="noopener noreferrer">github.com/samethabali</a></li>
-            <li><strong>Telefon:</strong> <a href="tel:+905466251809">+90 546 625 1809</a></li>
-        </ul>
-
-        <p><em>Not: Genellikle e-postalara gün içinde dönüş yapıyorum.</em></p>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Samet Can Habalı</p>
-    </footer>
-
+    <div class="container">
+        <header>
+            <h1>İletişim</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="about.html">Hakkımda</a></li>
+                    <li><a href="interests.html">İlgi Alanlarım</a></li>
+                    <li><a href="contact.html" class="active">İletişim</a></li>
+                </ul>
+            </nav>
+            <p class="header-desc">Benimle projeler veya fikir alışverişi için iletişime geçebilirsiniz.</p>
+        </header>
+        <main>
+            <div class="content-box">
+                <h2>Bana Ulaşın</h2>
+                <p>Yazılım mimarileri, yapay zeka projeleri veya freelance işbirlikleri hakkında konuşmak isterseniz aşağıdaki kanallardan bana ulaşabilirsiniz. E-postalara genellikle aynı gün içinde dönüş sağlıyorum.</p>
+                <ul class="contact-list">
+                    <li><strong>E-posta:</strong> <a href="mailto:samets.250223@gmail.com">samets.250223@gmail.com</a></li>
+                    <li><strong>GitHub:</strong> <a href="https://github.com/samethabali" target="_blank">github.com/samethabali</a></li>
+                    <li><strong>Telefon:</strong> <a href="tel:+905466251809">+90 546 625 1809</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-box">
+                <h2>Konum Bilgisi</h2>
+                <p>Şu anda eğitimim ve çalışmalarım sebebiyle <strong>İstanbul, Türkiye</strong>'de bulunuyorum.</p>
+                <p>Özellikle teknoloji etkinliklerinde, GDG (Google Developer Groups) buluşmalarında veya kahve eşliğinde sistem tasarımı konuşabileceğimiz ortamlarda görüşmek dileğiyle!</p>
+            </div>
+        </main>
+        <footer>
+            <p>© 2026 Samet Can Habalı. Tüm hakları saklıdır.</p>
+        </footer>
+    </div>
 </body>
 </html>
