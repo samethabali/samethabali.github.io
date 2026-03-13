@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <title>Samet Can Habalı | İletişim</title>
     <style>
-        h1, h2, p, a, li { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; }
+        /* Genel Temel Stiller */
+        h1, h2, p, a, li, label { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; }
         body { background-color: #e9ecef; padding: 30px; margin: 0; }
         .container { width: 960px; margin: 0 auto; background-color: #ffffff; border: 2px solid #dee2e6; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        
+        /* Header ve Navigasyon */
         header { background-color: #2b3035; color: #ffffff; padding: 25px; border-bottom: 4px solid #0dcaf0; border-top-left-radius: 6px; border-top-right-radius: 6px; }
         header h1 { display: inline-block; font-size: 26px; color: #ffffff; width: 40%; vertical-align: middle; }
         header nav { display: inline-block; width: 58%; text-align: right; vertical-align: middle; }
@@ -15,8 +18,10 @@
         header nav ul li a { text-decoration: none; color: #e9ecef; padding: 10px 15px; border-radius: 5px; transition: all 0.3s ease; font-weight: bold; }
         header nav ul li a:hover, header nav ul li a.active { background-color: #0dcaf0; color: #2b3035; }
         .header-desc { margin-top: 15px; color: #adb5bd; font-size: 15px; line-height: 1.5; }
+        
+        /* Üst İçerik (Mevcut İletişim Bilgileri) */
         main { padding: 25px; }
-        .content-box, .sidebar-box { display: inline-block; vertical-align: top; padding: 20px; box-sizing: border-box; border-radius: 6px; min-height: 320px; }
+        .content-box, .sidebar-box { display: inline-block; vertical-align: top; padding: 20px; box-sizing: border-box; border-radius: 6px; min-height: 250px; margin-bottom: 30px; }
         .content-box { width: 60%; background-color: #f8f9fa; border: 1px solid #ced4da; margin-right: 3%; }
         .sidebar-box { width: 36%; background-color: #e0fbfc; border: 1px solid #90e0ef; }
         .content-box h2, .sidebar-box h2 { font-size: 20px; color: #212529; border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px; margin-bottom: 15px; }
@@ -24,6 +29,111 @@
         ul.contact-list { padding-left: 20px; color: #495057; line-height: 2.2; font-size: 15px; }
         ul.contact-list a { color: #0275d8; text-decoration: none; }
         ul.contact-list a:hover { text-decoration: underline; }
+
+        /* --- YENİ EKLENEN İLETİŞİM FORMU CSS KODLARI --- */
+        
+        /* 1. Kutu Modeli ve Ortalama */
+        .contact-container {
+            width: 600px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .contact-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #2b3035;
+        }
+
+        .contact-container label {
+            display: block;
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        /* 4. Çoklu Seçici ile Girdi Alanları */
+        .contact-container input[type="text"],
+        .contact-container input[type="email"],
+        .contact-container input[type="password"],  
+        .contact-container select,
+        .contact-container textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        
+        .contact-container .radio-group,
+        .contact-container .checkbox-group {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .contact-container .radio-group label,
+        .contact-container .checkbox-group label {
+            display: block;
+            font-weight: normal;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        .contact-container input[type="radio"],
+        .contact-container input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        .contact-container input[type="file"] {
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* 5. Buton Tasarımları */
+        .form-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-submit, .btn-reset {
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            flex: 1; /* Butonların yan yana eşit genişlikte olmasını sağlar */
+            color: #ffffff;
+        }
+
+        .btn-submit {
+            background-color: #007bff; /* Mavi */
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-reset {
+            background-color: #dc3545; /* Kırmızı */
+        }
+
+        .btn-reset:hover {
+            background-color: #c82333;
+        }
+
+        /* Footer */
         footer { text-align: center; padding: 20px; background-color: #2b3035; color: #adb5bd; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; }
         footer p { font-size: 14px; }
     </style>
@@ -42,22 +152,71 @@
             </nav>
             <p class="header-desc">Benimle projeler veya fikir alışverişi için iletişime geçebilirsiniz.</p>
         </header>
+        
         <main>
             <div class="content-box">
                 <h2>Bana Ulaşın</h2>
-                <p>Yazılım mimarileri, yapay zeka projeleri veya freelance işbirlikleri hakkında konuşmak isterseniz aşağıdaki kanallardan bana ulaşabilirsiniz. E-postalara genellikle aynı gün içinde dönüş sağlıyorum.</p>
+                <p>Yazılım mimarileri, yapay zeka projeleri veya freelance işbirlikleri hakkında konuşmak isterseniz aşağıdaki kanallardan bana ulaşabilirsiniz.</p>
                 <ul class="contact-list">
                     <li><strong>E-posta:</strong> <a href="mailto:samets.250223@gmail.com">samets.250223@gmail.com</a></li>
                     <li><strong>GitHub:</strong> <a href="https://github.com/samethabali" target="_blank">github.com/samethabali</a></li>
-                    <li><strong>Telefon:</strong> <a href="tel:+905466251809">+90 546 625 1809</a></li>
                 </ul>
             </div>
             <div class="sidebar-box">
                 <h2>Konum Bilgisi</h2>
                 <p>Şu anda eğitimim ve çalışmalarım sebebiyle <strong>İstanbul, Türkiye</strong>'de bulunuyorum.</p>
-                <p>Özellikle teknoloji etkinliklerinde, GDG (Google Developer Groups) buluşmalarında veya kahve eşliğinde sistem tasarımı konuşabileceğimiz ortamlarda görüşmek dileğiyle!</p>
             </div>
-        </main>
+
+            <div class="contact-container">
+                <h2>Detaylı İletişim Formu</h2>
+                
+                <form action="#" method="POST">
+                    
+                    <label for="adsoyad">Ad Soyad:</label>
+                    <input type="text" id="adsoyad" name="adsoyad" placeholder="Örn: Asaf Karataş" required>
+
+                    <label for="eposta">E-posta Adresi:</label>
+                    <input type="email" id="eposta" name="eposta" placeholder="ornek@mail.com" required>
+
+                    <label for="sifre">Başvuru Takip Şifresi:</label>
+                    <input type="password" id="sifre" name="sifre" placeholder="Şifrenizi girin">
+
+                    <label>İletişim Tercihi:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="iletisim_tercihi" value="eposta" checked> Bana e-posta ile ulaşın</label>
+                        <label><input type="radio" name="iletisim_tercihi" value="telefon"> Bana telefonla ulaşın</label>
+                    </div>
+
+                    <label>İlgi Alanları / Yetenekler:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="yetenek" value="html"> HTML</label>
+                        <label><input type="checkbox" name="yetenek" value="css"> CSS</label>
+                        <label><input type="checkbox" name="yetenek" value="algoritma"> Algoritma</label>
+                    </div>
+
+                    <label for="konu">Konu:</label>
+                    <select id="konu" name="konu">
+                        <option value="" disabled selected>Lütfen bir konu seçin...</option>
+                        <option value="is_teklifi">İş Teklifi</option>
+                        <option value="soru">Soru</option>
+                        <option value="geri_bildirim">Geri Bildirim</option>
+                    </select>
+
+                    <label for="dosya">Özgeçmiş (CV) veya Fotoğraf Yükle:</label>
+                    <input type="file" id="dosya" name="dosya">
+
+                    <label for="mesaj">Mesajınız:</label>
+                    <textarea id="mesaj" name="mesaj" rows="5" placeholder="Detaylı mesajınızı buraya yazabilirsiniz..."></textarea>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-submit">Gönder</button>
+                        <button type="reset" class="btn-reset">Temizle</button>
+                    </div>
+
+                </form>
+            </div>
+            </main>
+        
         <footer>
             <p>© 2026 Samet Can Habalı. Tüm hakları saklıdır.</p>
         </footer>
