@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Ödevi | Samet Can Habalı</title>
+    <style>
+        /* Temel Sıfırlama */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* 1) ANA KAPSAYICI - Zorunlu 100vh ve flex column */
+        .wrapper {
+            display: flex;
+            flex-direction: column; /* Dikey yerleşim kuralı [cite: 69] */
+            height: 100vh; /* Ekran yüksekliğine sığma kuralı  */
+            background-color: #f8f9fa;
+            overflow: hidden;
+        }
+
+        /* 2) NAVBAR (10vh) */
+        .navbar {
+            height: 10vh; /* Yükseklik kuralı [cite: 73] */
+            display: flex;
+            justify-content: space-between; /* İstenen kural [cite: 75] */
+            align-items: center; /* İstenen kural [cite: 76] */
+            background-color: #2b3035;
+            color: white;
+            padding: 0 5vw;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0dcaf0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #0dcaf0;
+        }
+
+        /* 3) HERO BÖLÜMÜ (30vh) */
+        .hero {
+            height: 30vh; /* Yükseklik kuralı [cite: 78] */
+            display: flex;
+            flex-direction: row; /* İstenen kural [cite: 81] */
+            justify-content: space-between; /* İstenen kural [cite: 82] */
+            align-items: stretch; /* İstenen kural [cite: 83] */
+            padding: 2vh 5vw;
+            background-color: #e9ecef;
+            gap: 20px;
+        }
+
+        .hero-text {
+            flex-basis: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .hero-text h1 { color: #212529; font-size: 28px; }
+        .hero-text p { color: #495057; font-size: 16px; line-height: 1.5; }
+
+        .btn-primary {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            width: fit-content;
+        }
+
+        .hero-image {
+            flex-basis: 45%;
+            background-color: #ced4da;
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #6c757d;
+        }
+
+        /* 4) KARTLAR BÖLÜMÜ (30vh) */
+        .cards-section {
+            height: 30vh; /* Yükseklik kuralı [cite: 85] */
+            display: flex; /* İstenen kural [cite: 88] */
+            flex-wrap: wrap; /* İstenen kural [cite: 89] */
+            justify-content: center;
+            align-content: center;
+            gap: 15px; /* İstenen kural [cite: 90] */
+            padding: 2vh 5vw;
+            background-color: #ffffff;
+        }
+
+        .card {
+            background-color: #e0fbfc;
+            border: 1px solid #90e0ef;
+            border-radius: 6px;
+            padding: 10px;
+            width: calc(33.333% - 20px); /* 6 kart sığacak şekilde ayarlama [cite: 86] */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card h3 { font-size: 16px; margin-bottom: 5px; color: #2b3035; }
+        .card p { font-size: 13px; color: #495057; }
+
+        /* 5) FLEX GROW UYGULAMASI (20vh) */
+        .flex-grow-section {
+            height: 20vh; /* Yükseklik kuralı [cite: 92] */
+            display: flex;
+            align-items: stretch; /* Yükseklik esnemesi kuralı [cite: 97] */
+            gap: 15px;
+            padding: 2vh 5vw;
+            background-color: #e9ecef;
+        }
+
+        .grow-box {
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* Zorunlu flex-grow: 1-2-1 kuralı  */
+        .box-1 {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            flex-grow: 1; /* [cite: 94] */
+        }
+
+        .box-2 {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            flex-grow: 2; /* [cite: 95] */
+        }
+
+        .box-3 {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            flex-grow: 1; /* [cite: 96] */
+        }
+
+        .grow-box h4 { margin-bottom: 8px; color: #212529; }
+
+        /* 6) FOOTER (10vh) */
+        .footer {
+            height: 10vh; /* Yükseklik kuralı [cite: 99] */
+            display: flex;
+            justify-content: center; /* İstenen kural [cite: 101] */
+            align-items: center; /* İstenen kural [cite: 102] */
+            background-color: #2b3035;
+            color: #adb5bd;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <nav class="navbar">
+            <div class="logo">SCH.</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="about.html">Hakkımda</a></li>
+                <li><a href="interests.html">İlgi Alanları</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+            </ul>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Sistem Mimarileri</h1>
+                <p>Veriye dayalı karar mekanizmaları ve yüksek performanslı backend sistemleri tasarımı.</p>
+                <button class="btn-primary">Kodu İncele</button>
+            </div>
+            <div class="hero-image">
+                <span>[Görsel Alanı - Mimari Şeması]</span>
+            </div>
+        </section>
+
+        <section class="cards-section">
+            <div class="card">
+                <h3>Node.js</h3>
+                <p>Asenkron API'ler.</p>
+            </div>
+            <div class="card">
+                <h3>PostgreSQL</h3>
+                <p>İlişkisel Veriler.</p>
+            </div>
+            <div class="card">
+                <h3>Redis</h3>
+                <p>Önbellekleme.</p>
+            </div>
+            <div class="card">
+                <h3>ResNet50</h3>
+                <p>Görüntü İşleme.</p>
+            </div>
+            <div class="card">
+                <h3>SegFormer</h3>
+                <p>Manipülasyon Tespiti.</p>
+            </div>
+            <div class="card">
+                <h3>WebSockets</h3>
+                <p>Canlı İletişim.</p>
+            </div>
+        </section>
+
+        <section class="flex-grow-section">
+            <div class="grow-box box-1">
+                <h4>1. Kutu</h4>
+                <p>flex-grow: 1;</p>
+            </div>
+            <div class="grow-box box-2">
+                <h4>2. Kutu (Ana Odak - Dağıtık Sistemler)</h4>
+                <p>flex-grow: 2;</p>
+            </div>
+            <div class="grow-box box-3">
+                <h4>3. Kutu</h4>
+                <p>flex-grow: 1;</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2026 Samet Can Habalı - Temel Flexbox Örneği</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
