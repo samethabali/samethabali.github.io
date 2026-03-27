@@ -16,18 +16,17 @@
         /* 1) ANA KAPSAYICI - Zorunlu 100vh ve flex column */
         .wrapper {
             display: flex;
-            flex-direction: column; /* Dikey yerleşim kuralı [cite: 69] */
-            height: 100vh; /* Ekran yüksekliğine sığma kuralı  */
+            flex-direction: column; /* Dikey yerleşim kuralı*/
+            height: 100vh; /* Ekran yüksekliğine sığma kuralı */
             background-color: #f8f9fa;
             overflow: hidden;
         }
 
-        /* 2) NAVBAR (10vh) */
         .navbar {
-            height: 10vh; /* Yükseklik kuralı [cite: 73] */
+            height: 10vh; 
             display: flex;
-            justify-content: space-between; /* İstenen kural [cite: 75] */
-            align-items: center; /* İstenen kural [cite: 76] */
+            justify-content: space-between; 
+            align-items: center;
             background-color: #2b3035;
             color: white;
             padding: 0 5vw;
@@ -58,11 +57,11 @@
 
         /* 3) HERO BÖLÜMÜ (30vh) */
         .hero {
-            height: 30vh; /* Yükseklik kuralı [cite: 78] */
+            height: 30vh; /* Yükseklik kuralı */
             display: flex;
-            flex-direction: row; /* İstenen kural [cite: 81] */
-            justify-content: space-between; /* İstenen kural [cite: 82] */
-            align-items: stretch; /* İstenen kural [cite: 83] */
+            flex-direction: row; 
+            justify-content: space-between;
+            align-items: stretch;
             padding: 2vh 5vw;
             background-color: #e9ecef;
             gap: 20px;
@@ -103,12 +102,12 @@
 
         /* 4) KARTLAR BÖLÜMÜ (30vh) */
         .cards-section {
-            height: 30vh; /* Yükseklik kuralı [cite: 85] */
-            display: flex; /* İstenen kural [cite: 88] */
-            flex-wrap: wrap; /* İstenen kural [cite: 89] */
+            height: 30vh; 
+            display: flex; 
+            flex-wrap: wrap;
             justify-content: center;
             align-content: center;
-            gap: 15px; /* İstenen kural [cite: 90] */
+            gap: 15px; 
             padding: 2vh 5vw;
             background-color: #ffffff;
         }
@@ -118,7 +117,7 @@
             border: 1px solid #90e0ef;
             border-radius: 6px;
             padding: 10px;
-            width: calc(33.333% - 20px); /* 6 kart sığacak şekilde ayarlama [cite: 86] */
+            width: calc(33.333% - 20px); /* 6 kart sığacak şekilde ayarlama*/
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -130,9 +129,9 @@
 
         /* 5) FLEX GROW UYGULAMASI (20vh) */
         .flex-grow-section {
-            height: 20vh; /* Yükseklik kuralı [cite: 92] */
+            height: 20vh; 
             display: flex;
-            align-items: stretch; /* Yükseklik esnemesi kuralı [cite: 97] */
+            align-items: stretch;
             gap: 15px;
             padding: 2vh 5vw;
             background-color: #e9ecef;
@@ -152,29 +151,29 @@
         .box-1 {
             background-color: #d1ecf1;
             border: 1px solid #bee5eb;
-            flex-grow: 1; /* [cite: 94] */
+            flex-grow: 1;
         }
 
         .box-2 {
             background-color: #d4edda;
             border: 1px solid #c3e6cb;
-            flex-grow: 2; /* [cite: 95] */
+            flex-grow: 2; 
         }
 
         .box-3 {
             background-color: #fff3cd;
             border: 1px solid #ffeeba;
-            flex-grow: 1; /* [cite: 96] */
+            flex-grow: 1; 
         }
 
         .grow-box h4 { margin-bottom: 8px; color: #212529; }
 
         /* 6) FOOTER (10vh) */
         .footer {
-            height: 10vh; /* Yükseklik kuralı [cite: 99] */
+            height: 10vh; 
             display: flex;
-            justify-content: center; /* İstenen kural [cite: 101] */
-            align-items: center; /* İstenen kural [cite: 102] */
+            justify-content: center; 
+            align-items: center; 
             background-color: #2b3035;
             color: #adb5bd;
             font-size: 14px;
