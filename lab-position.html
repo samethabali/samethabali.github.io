@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etkinlik Duyurusu | Samet Can Habalı</title>
+    <style>
+        /* Genel Temel Stiller (Mevcut Teman ile Uyumlu) */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #e9ecef; color: #495057; min-height: 100vh; display: flex; flex-direction: column; }
+        
+        /* Kısa Başlık Alanı */
+        header { background-color: #2b3035; color: #ffffff; padding: 25px 5vw; border-bottom: 4px solid #0dcaf0; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 24px; color: #ffffff; white-space: nowrap; }
+        nav ul { list-style: none; display: flex; gap: 15px; }
+        nav ul li a { text-decoration: none; color: #e9ecef; padding: 8px 12px; border-radius: 5px; transition: all 0.3s ease; font-weight: bold; cursor: pointer; } /* Hover cursor 1 */
+        nav ul li a:hover { background-color: #0dcaf0; color: #2b3035; }
+
+        /* Ana İçerik Alanı */
+        main { flex: 1; display: flex; justify-content: center; align-items: center; padding: 50px 20px; }
+
+        /* === ÖDEVİN KALBİ: POSITION MANTIĞI === */
+
+        /* 1. Kapsayıcı Kart - POSITION: RELATIVE */
+        .announcement-card {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            background-color: #ffffff;
+            border: 1px solid #ced4da;
+            border-radius: 12px;
+            padding: 50px 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden; /* Dışarı taşan dekoratif objeleri kesmek için */
+            transition: transform 0.4s ease, box-shadow 0.4s ease; /* Etkileşim 1: Transition */
+        }
+
+        .announcement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        /* 2. Absolute Öğe 1: Arka Plan Dekorasyonu & Z-Index */
+        .bg-shape {
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 250px;
+            height: 250px;
+            background-color: rgba(13, 202, 240, 0.1); /* Saydam turkuaz */
+            border-radius: 50%;
+            z-index: 0; /* Yazıların arkasında kalması için z-index 0 */
+        }
+
+        /* Kart İçeriği (Yazıların önde durması için relative ve z-index) */
+        .card-content {
+            position: relative;
+            z-index: 2; /* Dekorasyonun üstünde durur */
+        }
+
+        .card-content h2 { font-size: 28px; color: #2b3035; margin-bottom: 15px; }
+        .card-content p { font-size: 16px; line-height: 1.6; margin-bottom: 20px; }
+
+        /* 3. Absolute Öğe 2: Tarih Rozeti */
+        .badge-date {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #2b3035;
+            color: #0dcaf0;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+            z-index: 3;
+        }
+
+        /* 4. Absolute Öğe 3: Durum Rozeti */
+        .badge-status {
+            position: absolute;
+            top: 20px;
+            left: -10px; /* Karttan hafif dışarı taşma efekti */
+            background-color: #dc3545; /* Kırmızı */
+            color: #ffffff;
+            padding: 8px 20px;
+            border-radius: 0 20px 20px 0;
+            font-weight: bold;
+            font-size: 14px;
+            z-index: 3;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+
+        /* 5. Absolute Öğe 4: Aksiyon Butonu */
+        .action-button {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer; /* Hover cursor 2 */
+            z-index: 3;
+            transition: background-color 0.3s;
+        }
+
+        .action-button:hover { background-color: #0056b3; }
+        .action-button:active { transform: scale(0.95); } /* Etkileşim 2: Active Efekti */
+
+        /* === 6. SABİT ÖĞE (POSITION: FIXED) & KEYFRAMES ANIMASYONU === */
+        .fixed-helper {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #0dcaf0;
+            color: #2b3035;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(13, 202, 240, 0.5);
+            cursor: pointer; /* Hover cursor 3 */
+            z-index: 999; /* Her şeyin üstünde kalması için */
+            animation: pulse 2s infinite; /* Etkileşim 3: Keyframes Animasyonu */
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(13, 202, 240, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(13, 202, 240, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(13, 202, 240, 0); }
+        }
+
+        /* Basit Alt Bilgi Alanı */
+        footer { background-color: #2b3035; color: #adb5bd; text-align: center; padding: 20px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>SCH. Lab</h1>
+        <nav>
+            <ul>
+                <!-- Ana sayfa bağlantısı burada (Şart sağlandı) -->
+                <li><a href="index.html">← Ana Sayfaya Dön</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- KAPSAYICI KART (Relative) -->
+        <div class="announcement-card">
+            
+            <!-- ABSOLUTE ÖĞELER -->
+            <div class="bg-shape"></div>
+            <div class="badge-status">Ödüllü Etkinlik</div>
+            <div class="badge-date">24 Mayıs 2026</div>
+
+            <!-- İÇERİK (Z-index ile öne alındı) -->
+            <div class="card-content">
+                <h2>Derin Öğrenme ve Sistem Mimarileri Hackathonu</h2>
+                <p>Marmara Üniversitesi Bilgisayar Mühendisliği kulübü tarafından düzenlenen bu hackathonda, katılımcılar 48 saat boyunca yüksek trafikli ağ mimarileri ve görüntü işleme algoritmaları üzerine projeler geliştirecekler.</p>
+                <p><strong>Konum:</strong> Mühendislik Fakültesi, Konferans Salonu</p>
+            </div>
+
+            <!-- ABSOLUTE BUTON -->
+            <button class="action-button">Kayıt Ol</button>
+
+        </div>
+    </main>
+
+    <!-- FIXED YARDIMCI ÖĞE -->
+    <div class="fixed-helper" title="Yardım ve Canlı Destek">?</div>
+
+    <footer>
+        <p>© 2026 CSS Position Laboratuvar Çalışması - Samet Can Habalı</p>
+    </footer>
+
+</body>
+</html>
