@@ -133,6 +133,33 @@
             background-color: #d42347;
         }
 
+        /* Açılır Menü (Dropdown) Stilleri */
+        header nav ul li.dropdown { position: relative; display: inline-block; }
+        header nav ul li.dropdown .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2b3035;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+            z-index: 1000;
+            top: 100%;
+            left: 0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        header nav ul li.dropdown:hover .dropdown-content { display: block; }
+        header nav ul li.dropdown .dropdown-content a {
+            display: block;
+            padding: 12px 16px;
+            text-align: left;
+            border-radius: 0;
+            margin: 0;
+        }
+        header nav ul li.dropdown .dropdown-content a:hover {
+            background-color: #0dcaf0;
+            color: #2b3035;
+        }
+
         /* Footer */
         footer { text-align: center; padding: 20px; background-color: #2b3035; color: #adb5bd; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; }
         footer p { font-size: 14px; }
@@ -147,9 +174,14 @@
                     <li><a href="index.html">Ana Sayfa</a></li>
                     <li><a href="about.html">Hakkımda</a></li>
                     <li><a href="interests.html">İlgi Alanlarım</a></li>
-                    <li><a href="contact.html" class="active">İletişim</a></li>
-                    <li><a href="flexbox.html">Flexbox Ödevi</a></li>
-                    <li><a href="lab-position.html">Lab Position</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" style="cursor: pointer;">Uygulamalar ▾</a>
+                        <div class="dropdown-content">
+                            <a href="not-hesaplama.html">Not Hesaplama</a>
+                            <a href="birim-donusturucu.html">Birim Dönüştürücü</a>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <p class="header-desc">Benimle projeler veya fikir alışverişi için iletişime geçebilirsiniz.</p>
