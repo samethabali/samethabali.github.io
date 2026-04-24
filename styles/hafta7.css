@@ -1,0 +1,21 @@
+/* Bootstrap'in default fontunu senin sitene uyumlu hale getirelim */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Kartların üzerine gelince hafif kalkma efekti */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+}
+
+/* Form alanı odaklanma rengini turkuaz/info yapalım */
+.form-control:focus, .form-select:focus {
+    border-color: #0dcaf0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.25);
+}
